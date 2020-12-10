@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>{{ $title }}</h1>
-    <p>{{ $body }}</p>
+    <p>{{ $body ?? '' }}</p>
     @if (count($services) > 0)
         <ul>
             @foreach ($services as $service)

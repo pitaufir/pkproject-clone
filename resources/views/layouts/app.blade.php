@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-inverse shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -34,25 +34,25 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/posts/create">Add Post</a>
+                            <a href="{{ url('/posts/create') }}" class="nav-link">Add Post</a>
                         </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/services">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">About</a>
-                        </li>    
-                        <li class="nav-item">
-                            <a class="nav-link" href="/posts">Blog</a>
-                        </li>  
                         <!-- Authentication Links -->
+                        <div class="nav-item">
+                            <a href="{{ url('/') }}" class="nav-link">Home</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="{{ url('/services') }}" class="nav-link">Services</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="{{ url('/posts') }}" class="nav-link">Blog</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="{{ url('/about') }}" class="nav-link">About</a>
+                        </div>
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -69,7 +69,6 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a href="/home" class="dropdown-item">Profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
